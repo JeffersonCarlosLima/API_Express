@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  if typeof db_ok !== 'undefined'
+    p Database status: #{db_ok ? 'OK' : 'OFFLINE'}
+  if typeof error !== 'undefined' && error
+    p(style="color:red") #{error}
